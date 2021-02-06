@@ -13,6 +13,6 @@ class Sentences(Tokenize):
     def load(self):
         """ токенизация по предложениям """
         self.getstring = Tokenize.load(self) 
-        self.sentlist = re.split("([.!?]+)", self.getstring)
+        self.sentlist = re.split("(?<!\w\.\w.)(?<![a-z]\.)(?<=\.|\?|\!)(\s|[a-z].*)", self.getstring)
         print(self.sentlist)
         return self.sentlist
