@@ -13,7 +13,7 @@ class Punctuation(Tokenize):
     def load(self):
         """ токенизация по символам """
         self.getstring = Tokenize.load(self)
-        self.punclist = re.split("(\W+|[~«»<>,.?!-()])+", self.getstring)
+        self.punclist = re.split("" "(\W|[~«»<>,.?!-()])", self.getstring)
         print(self.punclist)
         return self.punclist
         
