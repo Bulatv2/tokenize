@@ -4,7 +4,7 @@ from tokenize import Tokenize
 import re
 
 class Words(Tokenize):
-    """ из списка делает токинезацию по словам """
+    """ делает токинезацию по словам """
     wordslist = []
     getstring = ""
     def __init__(self, text):
