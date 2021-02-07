@@ -4,7 +4,7 @@ from tokenize import Tokenize
 import re
 
 class Sentences(Tokenize):
-    """ из списка сделать предложения """
+    """ сделать предложения """
     sentlist = []
     getstring = ""
     def __init__(self, text):
