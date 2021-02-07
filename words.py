@@ -13,6 +13,6 @@ class Words(Tokenize):
     def load(self):
         """ токенизация по словам """
         self.getstring = Tokenize.load(self)
-        self.wordslist = re.split("\W+", self.getstring)
+        self.wordslist = re.split("(\w+|[a-z])", self.getstring)
         print(self.wordslist)
         return self.wordslist
