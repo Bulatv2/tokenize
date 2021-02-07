@@ -4,7 +4,7 @@ from tokenize import Tokenize
 import re
 
 class Punctuation(Tokenize):
-    """ из списка делает токенизацию по символам """
+    """ делает токенизацию по символам """
     punclist = []
     getstring = ""
     def __init__(self, text):
