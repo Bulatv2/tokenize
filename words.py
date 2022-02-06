@@ -15,7 +15,7 @@ class Words(Tokenize):
     def load(self):
         """ токенизация по словам """
         self.getstring = Tokenize.load(self)
-        self.onestring = re.sub("\.|\!|\,|\:|\;|\)|\(|\&|\#|\"|\?", "", self.getstring)
-        self.wordslist = re.split("(\w+|[a-zA-Z0-9])", self.onestring)
+        self.onestring = re.sub("\.|\!|\,|\:|\;|\)|\(|\&|\#|\"|\?|\»|\«|\-", " ", self.getstring)
+        self.wordslist = re.split("(\w+|[^a-zA-Z0-9])", self.onestring)
         self.filtered = [x for x in self.wordslist if x not in self.xlist]
         return self.filtered
