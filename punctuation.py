@@ -14,7 +14,7 @@ class Punctuation(Tokenize):
     def load(self):
         """ токенизация по символам """
         self.getstring = Tokenize.load(self)
-        self.punclist = re.split("\w+|[a-z])", self.getstring)
+        self.punclist = re.split("\w+|[^a-z])", self.getstring)
         self.filtered = [x for x in self.punclist if x not in self.xlist]
         return self.filtered
         
