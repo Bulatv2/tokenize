@@ -2,7 +2,7 @@ from sentences import Sentences
 from words import Words
 from punctuation import Punctuation
 import corpus
-import countvector
+import vector
 
 llist = []
 rlist = []
@@ -24,5 +24,5 @@ for i in nlist:
     stop = corpus.stopwords("russian")
     stopfiltered = [str(x) for x in i if x not in stop]
     ylist.append(stopfiltered)
-vect = countvector.vector(ylist)
+vect = vector.vector(ylist)
 #print(vect)
