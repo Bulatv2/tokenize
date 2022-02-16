@@ -1,8 +1,7 @@
-# module for stopwords, lemmatize, stemming
+# module for stopwords, lemmatize
 
 stoplist = []
-lemmadict = []
-stemdict = {}
+lemmalist = []
 
 def stopwords(chlang):
     if chlang == "russian":
@@ -10,24 +9,13 @@ def stopwords(chlang):
             stoplist = file.read().split("\n")
     return stoplist
 
-def lemma(chlang):
+def lemmatize(chlang):
     if chlang == "russian":
-        with open("lemmas.txt", "r") as file:
+        with open("lemmatizer.txt", "r") as file:
             for line in file:
                 if not line:
                     continue
                 else:
                     left, right = line.split(":")
-                    lemmadict[left] = right
+                    lemmalist[left] = right
     return lemmadict
-
-def stem(chlang):
-    if chlang == "russian":
-        with open("stems.txt", "r") as file:
-            for line in file:
-                if not line:
-                    continue
-                else:
-                    left, right = line.split(":")
-                    stemdict[left] = right
-    return stemdict
