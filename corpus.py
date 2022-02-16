@@ -16,6 +16,6 @@ def lemmatize(chlang):
                 if not line:
                     continue
                 else:
-                    left, right = line.split(":")
+                    left, right = line.split(" ")
                     lemmalist[left] = right
     return lemmadict
