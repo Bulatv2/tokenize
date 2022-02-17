@@ -3,23 +3,22 @@ from words import Words
 from punctuation import Punctuation
 import corpus
 
-llist = []
-rlist = []
 nlist = []
-ylist = []
+
+# для избежания возможной ошибки при неправильном форматировании данных
 with open("data.txt", "r") as file:
-    for line in file:
-        if not line:
+    for row in file:
+        if not row:
             continue
         else:
-            left, right, *res = line.split(":")
-            llist.append(left)
-            rlist.append(right)
-for i in llist:
-    insth = Words(i)
-    w = insth.load()
-    nlist.append(w)
-for i in nlist:
-    stop = corpus.stopwords("russian")
-    stopfiltered = [str(x) for x in i if x not in stop]
-    ylist.append(stopfiltered)
+            xlist.append(row)
+        varstring = " ".join(xlist)
+
+w = Words(varstring)
+wl = w.load()
+print(wl)
+stop = corpus.stopwords("russian")
+print(stop)
+for i in wl:
+        stopfiltered = [str(x) for x in wl if x not in stop]
+print(stopfiltered)
