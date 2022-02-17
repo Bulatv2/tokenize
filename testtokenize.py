@@ -18,10 +18,10 @@ with open("data.txt", "r") as file:
 #tokenize string to words
 w = Words(varstring)
 wl = w.load()
-print(wl)
+print("this is word tokenize", wl)
 
 # load stop words
 stop = corpus.stopwords("russian")
 for i in wl:
         stopfiltered = [str(x) for x in wl if x not in stop]
-print(stopfiltered)
+print("this is without stop words", stopfiltered)
