@@ -27,6 +27,7 @@ for i in wl:
         stopfiltered = [str(x) for x in wl if x not in stop]
 print("this is without stop words\n", stopfiltered)
 
+#lemmatize 
 lemma = Lemmatize(stopfiltered)
 l = lemma.load()
 print("lemmatize\n", l)
