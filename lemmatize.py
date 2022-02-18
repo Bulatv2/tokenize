@@ -17,8 +17,11 @@ class Lemmatize:
         self.text = text
     def load(self):
         for i in self.text:
+            flag = 1
             for j in llist:
                 if i == j:
                     lemmalist.append(rlist[llist.index(j)])
-            lemmalist.append(i)
+                    flag = 0
+            if flag != 0:
+                lemmalist.append(i)
         return lemmalist
