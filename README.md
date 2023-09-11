@@ -2,14 +2,14 @@
 
 tokenize to sentences, words, stop-words, stemming (ru)
 
-from nlp.words import Words
+from nlp.tokenize import Tokenize
 from nlp.stem import Stemming
 from nlp.corpus import Corpus
 with open("testdata.txt", "r") as file:
     text = file.read()
 # tokenize to words
-tokword = Words(text)
-tokwordload = tokword.load()
+tokword = Tokenize(text)
+tokwordload = tokword.words()
 print("\nword tokenize:\n", tokwordload)
 # load stop words
 stop = Corpus()
